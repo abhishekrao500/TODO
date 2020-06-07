@@ -4,12 +4,115 @@
     <title>
         <%=title%>
     </title>
+    <script defer src="https://friconix.com/cdn/friconix.js">
+    </script>
+    <!-- link to our css file present in assets folder -->
+    <link rel="stylesheet" href="/css/home.css">
 </head>
 
 <body>
-    <h1> Todo/
-        <%=title%>
-    </h1>
+    <!-- outer DIV -->
+
+    <div class="outer-div">
+
+        <!-- TODO CONTAINER -->
+
+        <div class="todo-container">
+
+            <!-- NAME OF APP -->
+            <div class="heading">
+                <h1>TODO App</h1>
+            </div>
+
+            <!-- DESCRIPTION CONTAINER -->
+            <div class="description-conatiner">
+                <!-- description head -->
+                <div class="desc">
+                    <h5>DESCRIPTION</h5>
+                </div>
+                <!-- actual description -->
+                <div class="desc-form">
+                    <form action="" method="POST">
+                        <input type="text" name="description" placeholder="What do you need to do?" class="input-feilds" required>
+                    </form>
+                </div>
+
+            </div>
+
+            <!-- DETAILS CONTAINER -->
+            <div class="details-container">
+
+                <!-- category container -->
+                <div class="category-container">
+                    <!-- category head -->
+                    <div class="desc">
+                        <h5>CATEGORY</h5>
+                    </div>
+                    <!-- actual category -->
+                    <div class="desc-form">
+                        <form action="" method="POST">
+                            <select class="input-feilds" id="selection">
+                              <option value="" disabled selected>Choose a category</option>
+                              <option value="Personal">Personal</option>
+                              <option value="Work">Work</option>
+                              <option value="School">School</option>
+                              <option value="Cleaning">Cleaning</option>
+                              <option value="Other">Other</option>
+                            </select>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- due-date container -->
+                <div class="due-date-container">
+                    <!-- due date head -->
+                    <div class="desc">
+                        <h5>DUE DATE</h5>
+                    </div>
+                    <!-- actual due date -->
+                    <div class="desc-form">
+                        <form action="" method="POST">
+                            <input type="date" class="input-feilds">
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- BUTTON CONTAINER -->
+            <div class="button-container">
+
+                <div class="buttons-div">
+                    <!-- add task button -->
+                    <div class="button-div">
+                        <button type="button" id="add-task"><i class="fi-xwsuxl-plus-solid"></i>
+                            ADD TASK</button>
+                    </div>
+                    <!-- delete tasks button -->
+                    <div class="button-div">
+                        <button type="button" id="delete-tasks"><i class="fi-xnsuxl-trash-bin"></i>
+                            DELETE TASKS</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="tasks">
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <!-- js script added at bottom of body -->
+    <script type="text/javascript" src="/js/home.js"></script>
 </body>
 
 </html>

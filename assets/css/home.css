@@ -1,0 +1,158 @@
+.outer-div {
+    background-color: rgb(128, 128, 128);
+    height: 98vh;
+    width: 98vw;
+    display: flex;
+    background-image: url(../images/4.jpg);
+}
+
+.todo-container {
+    background-color: rgb(255, 255, 255);
+    height: 82%;
+    width: 40%;
+    margin: auto;
+    border: 10px rgb(68, 68, 68) solid;
+    /* background-image: url("../images/3.png"); */
+}
+
+
+/* css for the heading part */
+
+.heading {
+    border: 1px lightgrey solid;
+    text-align: center;
+    height: 11%;
+}
+
+.heading h1 {
+    font-family: Lucida Console, Courier, monospace;
+    margin-top: 15px;
+    color: grey;
+}
+
+
+/* css for the description part */
+
+.description-conatiner {
+    border: 1px lightgrey solid;
+    height: 11%;
+}
+
+.textarea:active {
+    color: red;
+}
+
+.desc h5 {
+    font-family: Lucida Console, Courier, monospace;
+    color: grey;
+    margin-left: 15px;
+    margin-top: 5px;
+}
+
+
+/* css for textarea */
+
+
+/* textarea {
+    max-width: 90%;
+} */
+
+
+/* Removing blue border on Click or Focus of Input and Buttons */
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+    border: none;
+}
+
+
+/* css for the details part */
+
+.details-container {
+    height: 10%;
+    display: flex;
+}
+
+.category-container {
+    width: 50%;
+    border: 1px lightgray solid;
+}
+
+.category select {
+    border: none;
+}
+
+#selection {
+    margin-top: -19px;
+    margin-left: 10px;
+    border: none;
+    color: grey;
+}
+
+.due-date-container {
+    width: 50%;
+    border: 1px lightgray solid;
+}
+
+
+/* css for buttons part */
+
+.button-container {
+    border: 1px lightgray solid;
+    height: 20%;
+    display: flex;
+}
+
+.buttons-div {
+    height: 50%;
+    width: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-div {
+    width: 49%;
+}
+
+#add-task {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: rgb(68, 68, 68);
+    color: white;
+}
+
+#delete-tasks {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: rgb(238, 53, 30);
+    color: white;
+}
+
+.fi-xwsuxl-plus-solid {
+    font-size: 25px;
+    margin: auto;
+    margin-left: 0px;
+}
+
+.fi-xnsuxl-trash-bin {
+    font-size: 17px;
+    margin: auto;
+    margin-left: 0px;
+}
+
+
+/* css for common parts */
+
+.input-feilds {
+    margin-top: -19px;
+    margin-left: 13px;
+    border: none;
+    color: grey;
+    width: 90%;
+}
