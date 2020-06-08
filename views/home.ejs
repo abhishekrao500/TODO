@@ -24,80 +24,134 @@
                 <h1>TODO App</h1>
             </div>
 
-            <!-- DESCRIPTION CONTAINER -->
-            <div class="description-conatiner">
-                <!-- description head -->
-                <div class="desc">
-                    <h5>DESCRIPTION</h5>
-                </div>
-                <!-- actual description -->
-                <div class="desc-form">
-                    <form action="" method="POST">
-                        <input type="text" name="description" placeholder="What do you need to do?" class="input-feilds" required>
-                    </form>
-                </div>
 
+            <div class="add-task-button-form">
+
+
+                <!-- ADD TASK FORM STARTS HERE -->
+
+
+                <form action="/create-task" method="POST">
+
+                    <!-- DESCRIPTION CONTAINER -->
+
+                    <div class="description-conatiner">
+                        <!-- description head -->
+                        <div class="desc">
+                            <h5>DESCRIPTION</h5>
+                        </div>
+                        <!-- actual description -->
+                        <div class="desc-form">
+
+                            <!-- input description -->
+
+                            <input type="text" name="task_title" placeholder="What do you need to do?" class="input-feilds" required>
+
+                        </div>
+
+                    </div>
+
+                    <!-- DETAILS CONTAINER -->
+
+                    <div class="details-container">
+                        <!-- category container -->
+                        <div class="category-container">
+
+                            <!-- category head -->
+                            <div class="desc">
+                                <h5>CATEGORY</h5>
+                            </div>
+
+                            <!-- actual category -->
+                            <div class="desc-form">
+
+                                <!-- select category -->
+
+                                <select class="input-feilds" name="category" id="selection">
+                                    <option value="" disabled selected hidden>Choose a category</option>
+                                    <option value="Personal">Personal</option>
+                                    <option value="Work">Work</option>
+                                    <option value="School">School</option>
+                                    <option value="Cleaning">Cleaning</option>
+                                    <option value="Other">Other</option>
+                                </select>
+
+                            </div>
+                        </div>
+
+                        <!-- due-date container -->
+                        <div class="due-date-container">
+
+                            <!-- due date head -->
+                            <div class="desc">
+                                <h5>DUE DATE</h5>
+                            </div>
+
+                            <!-- actual due date -->
+                            <div class="desc-form">
+                                <!-- input due date -->
+
+                                <input type="date" name="due_date" class="input-feilds">
+
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- ADD BUTTON CONTAINER -->
+                    <div class="add-button-container">
+
+
+                        <!-- add task button-->
+                        <div class="add-button-div">
+
+                            <button type="submit" id="add-task"><i class="fi-xwsuxl-plus-solid"></i>
+                                    ADD TASK</button>
+
+                        </div>
+
+
+                    </div>
+                </form>
             </div>
 
-            <!-- DETAILS CONTAINER -->
-            <div class="details-container">
 
-                <!-- category container -->
-                <div class="category-container">
-                    <!-- category head -->
-                    <div class="desc">
-                        <h5>CATEGORY</h5>
-                    </div>
-                    <!-- actual category -->
-                    <div class="desc-form">
-                        <form action="" method="POST">
-                            <select class="input-feilds" id="selection">
-                              <option value="" disabled selected>Choose a category</option>
-                              <option value="Personal">Personal</option>
-                              <option value="Work">Work</option>
-                              <option value="School">School</option>
-                              <option value="Cleaning">Cleaning</option>
-                              <option value="Other">Other</option>
-                            </select>
-                        </form>
-                    </div>
-                </div>
+            <!-- CREATING THE TASK LIST -->
+            <div class="Tasks">
 
-                <!-- due-date container -->
-                <div class="due-date-container">
-                    <!-- due date head -->
-                    <div class="desc">
-                        <h5>DUE DATE</h5>
-                    </div>
-                    <!-- actual due date -->
-                    <div class="desc-form">
-                        <form action="" method="POST">
-                            <input type="date" class="input-feilds">
-                        </form>
-                    </div>
-                </div>
+                <UL>
+                    <% for(let i of task_list){%>
 
-            </div>
+                        <li class="single-class">
+                            <div class="check-box">
+                                <input type="checkbox" id="task-check" name="check-task" value="completed">
+                            </div>
+                            <div class="task-detail-container">
+                                <div class="task-description">
+                                    <p>
+                                        <%=i.task_title %>
+                                    </p>
+                                </div>
+                                <div class="task-due-date-container">
+                                    <p>
+                                        <%= i.due_date %>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="task-category-container">
+                                <div>
+                                    <h5>
+                                        <%= i.category %>
+                                    </h5>
+                                </div>
+                            </div>
 
-            <!-- BUTTON CONTAINER -->
-            <div class="button-container">
+                        </li>
 
-                <div class="buttons-div">
-                    <!-- add task button -->
-                    <div class="button-div">
-                        <button type="button" id="add-task"><i class="fi-xwsuxl-plus-solid"></i>
-                            ADD TASK</button>
-                    </div>
-                    <!-- delete tasks button -->
-                    <div class="button-div">
-                        <button type="button" id="delete-tasks"><i class="fi-xnsuxl-trash-bin"></i>
-                            DELETE TASKS</button>
-                    </div>
-                </div>
 
-            </div>
-
-            <div class="tasks">
+                        <%}%>
+                </UL>
 
             </div>
 

@@ -100,22 +100,16 @@ button:focus {
 
 /* css for buttons part */
 
-.button-container {
+.add-button-container {
     border: 1px lightgray solid;
     height: 20%;
     display: flex;
 }
 
-.buttons-div {
-    height: 50%;
-    width: 50%;
+.add-button-div {
     margin: auto;
-    display: flex;
-    justify-content: space-between;
-}
-
-.button-div {
-    width: 49%;
+    height: 50%;
+    width: 25%;
 }
 
 #add-task {
