@@ -3,15 +3,23 @@
     height: 98vh;
     width: 98vw;
     display: flex;
-    background-image: url(../images/4.jpg);
+    background-image: url(../images/100.jpg);
+    flex-direction: column;
 }
 
 .todo-container {
+    background-image: linear-gradient(to bottom right, rgb(10, 34, 36), rgb(30, 98, 104));
     background-color: rgb(255, 255, 255);
-    height: 82%;
+    height: 42%;
     width: 40%;
     margin: auto;
-    border: 10px rgb(68, 68, 68) solid;
+    border-top: 10px;
+    border-left: 10px;
+    border-right: 10px;
+    border-bottom: 0px;
+    border-color: rgb(14, 15, 15);
+    border-style: solid;
+    /* border:rgb(33,97,103) solid; */
     /* background-image: url("../images/3.png"); */
 }
 
@@ -19,23 +27,27 @@
 /* css for the heading part */
 
 .heading {
-    border: 1px lightgrey solid;
+    border-bottom: 1px rgb(39, 103, 107) solid;
+    /* background-image: linear-gradient(to bottom right, rgb(10, 34, 36), rgb(30, 98, 104)); */
     text-align: center;
-    height: 11%;
+    height: 19%;
+    /* background-color: rgb(38, 103, 107); */
 }
 
 .heading h1 {
     font-family: Lucida Console, Courier, monospace;
     margin-top: 15px;
-    color: grey;
+    color: rgb(239, 232, 226);
 }
 
 
 /* css for the description part */
 
 .description-conatiner {
-    border: 1px lightgrey solid;
-    height: 11%;
+    border-bottom: 1px rgb(39, 103, 107) solid;
+    /* background-image: linear-gradient(to bottom right, rgb(10, 34, 36), rgb(30, 98, 104)); */
+    height: 20%;
+    margin-top: 10px;
 }
 
 .textarea:active {
@@ -44,9 +56,9 @@
 
 .desc h5 {
     font-family: Lucida Console, Courier, monospace;
-    color: grey;
     margin-left: 15px;
     margin-top: 5px;
+    color: rgb(239, 232, 226);
 }
 
 
@@ -69,16 +81,26 @@ button:focus {
 }
 
 
+/* select:active,
+input::selection,
+textarea:active {
+    background: transparent;
+} */
+
+
 /* css for the details part */
 
 .details-container {
-    height: 10%;
+    border-bottom: 1px rgb(39, 103, 107) solid;
+    /* background-image: linear-gradient(to bottom right, rgb(10, 34, 36), rgb(30, 98, 104)); */
+    height: 20%;
+    margin-top: 10px;
     display: flex;
 }
 
 .category-container {
     width: 50%;
-    border: 1px lightgray solid;
+    /* border-right: 1px rgb(39, 103, 107) solid; */
 }
 
 .category select {
@@ -89,20 +111,19 @@ button:focus {
     margin-top: -19px;
     margin-left: 10px;
     border: none;
-    color: grey;
+    color: rgb(210, 231, 202);
+    ;
 }
 
 .due-date-container {
     width: 50%;
-    border: 1px lightgray solid;
 }
 
 
 /* css for buttons part */
 
 .add-button-container {
-    border: 1px lightgray solid;
-    height: 20%;
+    height: 39%;
     display: flex;
 }
 
@@ -116,16 +137,35 @@ button:focus {
     width: 100%;
     height: 100%;
     border: none;
-    background-color: rgb(68, 68, 68);
+    background-image: linear-gradient(to bottom right, rgb(52, 21, 95), rgb(4, 59, 174));
     color: white;
+    transform: translateX(-100px);
+    margin-top: -8px;
 }
 
-#delete-tasks {
-    width: 100%;
-    height: 100%;
+.delete-button-container {
+    height: 39%;
+    display: flex;
+    z-index: 999999999;
+}
+
+.delete-button-div {
+    margin: auto;
+    height: 50%;
+    width: 25%;
+    transform: translate(80px, px);
+    z-index: 999999999;
+}
+
+#delete-task {
+    width: 144px;
+    height: 58px;
     border: none;
+    background-image: linear-gradient(to bottom right, rgb(155, 4, 4), red);
     background-color: rgb(238, 53, 30);
     color: white;
+    z-index: 999999999;
+    /* transform: translate(90px, -118px); */
 }
 
 .fi-xwsuxl-plus-solid {
@@ -138,15 +178,141 @@ button:focus {
     font-size: 17px;
     margin: auto;
     margin-left: 0px;
+    z-index: 999999999;
 }
+
+.todo-list-container {
+    background-image: linear-gradient(to top right, rgb(10, 34, 36), rgb(30, 98, 104));
+    /* background-color: rgb(255, 255, 255); */
+    height: 42%;
+    width: 40%;
+    margin: auto;
+    margin-top: -47px;
+    border-top: 0px;
+    border-left: 10px;
+    border-right: 10px;
+    border-bottom: 10px;
+    border-color: rgb(14, 15, 15);
+    border-style: solid;
+    overflow-y: scroll;
+}
+
+
+/* .delete-form {
+    height: auto;
+    width: auto;
+} */
 
 
 /* css for common parts */
 
 .input-feilds {
+    background: transparent;
     margin-top: -19px;
     margin-left: 13px;
     border: none;
-    color: grey;
     width: 90%;
+    color: rgb(210, 231, 202);
+}
+
+.input-feilds option {
+    /* color: rgb(239, 232, 226); */
+}
+
+
+/* CSS FOR TODO LIST ITEMS */
+
+.left {
+    display: flex;
+    left: 17px;
+    position: relative;
+}
+
+.right {
+    display: flex;
+    right: 9px;
+    position: relative;
+}
+
+.unordered-list {
+    list-style-type: none;
+}
+
+.list-div {
+    border: 1px solid rgb(39, 103, 107);
+    margin-left: -30px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.single-task {
+    display: flex;
+}
+
+.task-description h5 {
+    font-family: Lucida Console, Courier, monospace;
+    color: rgb(239, 232, 226);
+}
+
+.check-box {
+    margin-top: 18px;
+}
+
+.task-detail-container {
+    margin-left: 20px;
+}
+
+
+/* details in task */
+
+.task-description {
+    word-break: break-word;
+    margin-bottom: -15px;
+}
+
+.task-due-date-container {
+    color: rgb(210, 231, 202);
+}
+
+.xyz {
+    height: 35px;
+    width: 70px;
+    background-image: linear-gradient(to bottom right, rgb(24, 105, 88), rgb(4, 252, 198));
+    text-align: center;
+}
+
+.xyz h5 {
+    padding: 10px;
+}
+
+
+/* details in task end */
+
+.task-category-container {
+    color: rgb(239, 232, 226);
+    margin-left: 100px;
+}
+
+::-webkit-input-placeholder {
+    color: rgb(210, 231, 202);
+    ;
+    font-size: 13px;
+}
+
+ ::-moz-placeholder {
+    color: rgb(210, 231, 202);
+    ;
+    font-size: 13px;
+}
+
+ :-ms-input-placeholder {
+    color: rgb(210, 231, 202);
+    ;
+    font-size: 13px;
+}
+
+ ::placeholder {
+    color: rgb(210, 231, 202);
+    ;
+    font-size: 13px;
 }

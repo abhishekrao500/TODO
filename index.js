@@ -5,12 +5,12 @@ const db = require('./config/mongoose');
 const Task = require('./models/task');
 
 const app = express();
-
+app.use(express.urlencoded());
 
 //use express router
 app.use('/', require('./routes/index'));
 app.use(express.static('assets'));
-app.use(express.urlencoded());
+
 //set up the view engine
 app.set('view engine', 'ejs');
 app.set('views', './views');

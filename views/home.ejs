@@ -45,7 +45,7 @@
 
                             <!-- input description -->
 
-                            <input type="text" name="task_title" placeholder="What do you need to do?" class="input-feilds" required>
+                            <input type="text" name="task_title" placeholder="What do you need to do?" autocomplete="off" class="input-feilds" required>
 
                         </div>
 
@@ -91,7 +91,7 @@
                             <div class="desc-form">
                                 <!-- input due date -->
 
-                                <input type="date" name="due_date" class="input-feilds">
+                                <input type="date" id="datepicker" name="due_date" class="input-feilds" min="2019-06-09">
 
 
                             </div>
@@ -117,46 +117,82 @@
             </div>
 
 
-            <!-- CREATING THE TASK LIST -->
-            <div class="Tasks">
+        </div>
 
-                <UL>
-                    <% for(let i of task_list){%>
+        <div>
 
-                        <li class="single-class">
-                            <div class="check-box">
-                                <input type="checkbox" id="task-check" name="check-task" value="completed">
-                            </div>
-                            <div class="task-detail-container">
-                                <div class="task-description">
-                                    <p>
-                                        <%=i.task_title %>
-                                    </p>
+        </div>
+
+        <div class="todo-list-container">
+
+            <div class="delete-tasks-button-form">
+
+                <form action="/delete-tasks" method="POST">
+
+                    <!-- DELETE BUTTON CONATINER -->
+                    <div class="delete-button-container">
+
+
+                        <!-- delete tasks button -->
+                        <div class="delete-button-div">
+
+                            <button type="submit" id="delete-task"><i class="fi-xnsuxl-trash-bin"></i>
+                                    DELETE TASKS</button>
+
+                        </div>
+
+
+                    </div>
+
+                    <!-- CREATING THE TASK LIST -->
+                    <div class="tasks-container">
+
+                        <UL class="unordered-list">
+                            <% for(let i of task_list){%>
+                                <div class="list-div">
+                                    <li class="single-task">
+                                        <div class="left">
+                                            <div class="check-box">
+                                                <input type="checkbox" id="task-check" name="check-task" value="completed">
+                                            </div>
+                                            <div class="task-detail-container">
+                                                <div class="task-description">
+                                                    <h5>
+                                                        <%=i.task_title %>
+                                                    </h5>
+                                                </div>
+                                                <div class="task-due-date-container">
+                                                    <h5>
+                                                        <%= i.due_date %>
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="right">
+                                            <div class="task-category-container">
+                                                <div class="xyz">
+                                                    <h5>
+                                                        <%= i.category %>
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </li>
                                 </div>
-                                <div class="task-due-date-container">
-                                    <p>
-                                        <%= i.due_date %>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="task-category-container">
-                                <div>
-                                    <h5>
-                                        <%= i.category %>
-                                    </h5>
-                                </div>
-                            </div>
 
-                        </li>
+                                <%}%>
+                        </UL>
 
+                    </div>
 
-                        <%}%>
-                </UL>
+                </form>
 
             </div>
 
-
         </div>
+
+
     </div>
 
 
