@@ -27,6 +27,9 @@ body {
     border-left: 10px;
     border-right: 10px;
     border-bottom: 0px;
+    position: absolute;
+    top: 10%;
+    left: 29%;
     border-color: rgb(12, 28, 28);
     border-style: solid;
 }
@@ -138,7 +141,7 @@ and the other one is the due date container which contains the date picker*/
 
 .add-button-div {
     margin: auto;
-    height: 50%;
+    height: 45px;
     width: 25%;
 }
 
@@ -163,20 +166,18 @@ and the other one is the due date container which contains the date picker*/
     margin: auto;
     height: 50%;
     width: 25%;
-    transform: translate(80px, px);
-    /* z-index: 999999999; */
+
 }
 
 #delete-task {
     width: 144px;
-    height: 58px;
+    height: 45px;
     border: none;
     background-image: linear-gradient(to bottom right, rgb(155, 4, 4), red);
     background-color: rgb(238, 53, 30);
     position: absolute;
     color: white;
-    z-index: 999;
-    transform: translate(90px, -92px);
+
     width: 147px;
     /* transform: translate(90px, -118px); */
 }
@@ -213,9 +214,13 @@ and the other one is the due date container which contains the date picker*/
     border-left: 10px;
     border-right: 10px;
     border-bottom: 10px;
+    top: 58%;
+    left: 29%;
+    position: absolute;
     border-color: rgb(12, 28, 28);
     border-style: solid;
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 
@@ -241,8 +246,9 @@ and the other one is the due date container which contains the date picker*/
 
 .right {
     display: flex;
-    right: 9px;
-    position: relative;
+    right: 32px;
+    position: absolute;
+    transition: all .5s ease-in-out;
 }
 
 
@@ -268,9 +274,7 @@ and the other one is the due date container which contains the date picker*/
     color: white;
 }
 
-.list-div:hover {
-    transform: scale(1.03);
-}
+
 
 .single-task {
     display: flex;
@@ -287,7 +291,7 @@ and the other one is the due date container which contains the date picker*/
 
 .task-detail-container {
     margin-left: 20px;
-    width: 338px;
+    width: 64%;
 }
 
 
