@@ -1,9 +1,13 @@
 body {
     background-color: black;
+    position: absolute;
     overflow-y: hidden;
 }
 
-
+html
+{
+    position: absolute;
+}
 /* outer-div contains the background image and is used to get the app at the centre of the webpage*/
 
 .outer-div {
@@ -12,7 +16,8 @@ body {
     width: 98vw;
     display: flex;
     background-image: url(../images/100.jpg);
-    flex-direction: column;
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
 }
 
 
@@ -157,9 +162,8 @@ and the other one is the due date container which contains the date picker*/
 }
 
 .delete-button-container {
-    height: 39%;
+    height: 30%;
     display: flex;
-    /* z-index: 999999999; */
     margin-bottom: -115px;
 }
 
@@ -175,10 +179,9 @@ and the other one is the due date container which contains the date picker*/
     border: none;
     background-image: linear-gradient(to bottom right, rgb(155, 4, 4), red);
     background-color: rgb(238, 53, 30);
-    position: fixed;
     color: white;
     width: 147px;
-    transform: translate(90px, -78px);
+    transform: translate(90px, -105px);
 }
 
 
@@ -197,7 +200,7 @@ and the other one is the due date container which contains the date picker*/
     font-size: 17px;
     margin: auto;
     margin-left: 0px;
-    z-index: 999999999;
+
 }
 
 
@@ -218,8 +221,7 @@ and the other one is the due date container which contains the date picker*/
     position: absolute;
     border-color: rgb(12, 28, 28);
     border-style: solid;
-    overflow-y: scroll;
-    overflow-x: hidden;
+
 }
 
 
@@ -241,12 +243,12 @@ and the other one is the due date container which contains the date picker*/
     display: flex;
     left: 17px;
     position: relative;
+    width: 324px;
 }
 
 .right {
     display: flex;
     right: 32px;
-    position: absolute;
     transition: all .5s ease-in-out;
 }
 
@@ -259,7 +261,12 @@ and the other one is the due date container which contains the date picker*/
 
 
 /* list-div contains a single task */
+.create-overflow
+{
 
+    overflow-x: hidden;
+    max-height: 102%;
+}
 .list-div {
     border: 1px solid rgb(39, 103, 107);
     margin-left: -30px;
@@ -288,7 +295,6 @@ and the other one is the due date container which contains the date picker*/
 
 .task-detail-container {
     margin-left: 20px;
-    width: 64%;
 }
 
 
