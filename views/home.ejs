@@ -9,6 +9,7 @@
     </script>
     <!-- link to our css file present in assets folder -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css">
+    <script src="https://kit.fontawesome.com/f1e91ef8d5.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/home.css">
 
 </head>
@@ -24,6 +25,7 @@
 
             <!-- NAME OF APP -->
             <div class="heading">
+                <!-- <i class="fas fa-clipboard-list"></i> -->
                 <h1>TODO App</h1>
             </div>
 
@@ -133,7 +135,7 @@
             <div class="delete-tasks-button-form">
 
                 <!-- Delete Form Starts Here -->
-                <form action="/delete-tasks/" method="POST">
+                <form action="/delete-tasks" method="POST">
 
                     <!-- DELETE BUTTON CONATINER -->
                     <div class="delete-button-container">
@@ -159,7 +161,7 @@
                                     <li class="single-task">
                                         <div class="left">
                                             <div class="check-box">
-                                                <input type="checkbox" id="task-check" name="check-task" value="completed">
+                                                <input type="checkbox" id="task-check" value="<%= i._id %>" name="check<%= i._id %>">
                                             </div>
                                             <div class="task-detail-container">
                                                 <div class="task-description">
@@ -176,11 +178,38 @@
                                         </div>
                                         <div class="right">
                                             <div class="task-category-container">
-                                                <div class="xyz">
-                                                    <h5>
-                                                        <%= i.category %>
-                                                    </h5>
-                                                </div>
+                                                <% if (i.category=="Personal") { %>
+                                                    <div class="xyz bg-seagreen">
+                                                        <h5>
+                                                            <%= i.category %>
+                                                        </h5>
+                                                    </div>
+                                                    <% } else if (i.category=="Work") { %>
+                                                        <div class="xyz bg-orange ">
+                                                            <h5>
+                                                                <%= i.category %>
+                                                            </h5>
+                                                        </div>
+                                                        <% } else if (i.category=="School") { %>
+                                                            <div class="xyz bg-green ">
+                                                                <h5>
+                                                                    <%= i.category %>
+                                                                </h5>
+                                                            </div>
+                                                            <% } else if (i.category=="Other") { %>
+                                                                <div class="xyz bg-violet ">
+                                                                    <h5>
+                                                                        <%= i.category %>
+                                                                    </h5>
+                                                                </div>
+
+                                                                <% } else if (i.category=="Cleaning") { %>
+                                                                    <div class="xyz bg-blue ">
+                                                                        <h5>
+                                                                            <%= i.category %>
+                                                                        </h5>
+                                                                    </div>
+                                                                    <% } %>
                                             </div>
                                         </div>
 

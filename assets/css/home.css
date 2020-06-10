@@ -40,6 +40,18 @@ body {
     height: 19%;
 }
 
+
+/* Positioning icons from Font Awesome */
+
+.fas {
+    display: inline-block;
+    margin: auto;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    font-size: 1.4em;
+    transform: translateY(-3px);
+}
+
 .heading h1 {
     font-family: Lucida Console, Courier, monospace;
     margin-top: 15px;
@@ -293,12 +305,31 @@ and the other one is the due date container which contains the date picker*/
 .xyz {
     height: 35px;
     width: 70px;
-    background-image: linear-gradient(to bottom right, rgb(24, 105, 88), rgb(4, 252, 198));
     text-align: center;
 }
 
 .xyz h5 {
     padding: 10px;
+}
+
+.bg-seagreen {
+    background-image: linear-gradient(to bottom right, rgb(24, 105, 88), rgb(4, 252, 198));
+}
+
+.bg-orange {
+    background-image: linear-gradient(to bottom right, rgb(255, 81, 0), rgb(255, 238, 0));
+}
+
+.bg-violet {
+    background-image: linear-gradient(to bottom right, rgb(86, 24, 105), rgb(247, 0, 255));
+}
+
+.bg-green {
+    background-image: linear-gradient(to bottom right, rgb(10, 119, 0), rgb(95, 255, 80));
+}
+
+.bg-blue {
+    background-image: linear-gradient(to bottom right, rgb(0, 99, 156), rgb(106, 225, 255));
 }
 
 .task-category-container {

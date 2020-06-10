@@ -28,3 +28,17 @@ module.exports.createTask = function(req, res) {
         });
     }
     //deleting tasks
+module.exports.deleteTask = function(req, res) {
+    console.log(req.body);
+    for (let i in req.body) {
+
+        Task.findByIdAndDelete(req.body[i], function(err) {
+            if (err) {
+                console.log('Error in Deleting the item');
+                return;
+            }
+
+        });
+    }
+    return res.redirect('back');
+}
