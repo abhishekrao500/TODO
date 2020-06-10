@@ -11,5 +11,6 @@ router.get('/', homeController.home);
 // Router for creating task
 router.post('/create-task', homeController.createTask);
 
+//Router for deleting tasks
 
 module.exports = router;

@@ -6,9 +6,9 @@ var date = new Date();
 
 if (date.getDate() < 10 && date.getMonth() + 1 < 10) {
     var today = date.getFullYear() + '-0' + (date.getMonth() + 1) + '-0' + date.getDate();
-} else if ((date.getMonth() + 1) < 10 && date.getDate() > 10) {
+} else if ((date.getMonth() + 1) < 10) {
     var today = date.getFullYear() + '-0' + (date.getMonth() + 1) + '-' + date.getDate();
-} else if ((date.getMonth() + 1) > 10 && date.getDate() < 10) {
+} else if ((date.getMonth() + 1) > 10) {
     var today = date.getFullYear() + '-' + (date.getMonth() + 1) + '-0' + date.getDate();
 } else {
     var today = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();

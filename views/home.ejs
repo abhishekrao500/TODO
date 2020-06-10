@@ -4,14 +4,17 @@
     <title>
         <%=title%>
     </title>
+    <!-- friconix provides free icons -->
     <script defer src="https://friconix.com/cdn/friconix.js">
     </script>
     <!-- link to our css file present in assets folder -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css">
     <link rel="stylesheet" href="/css/home.css">
+
 </head>
 
 <body>
-    <!-- outer DIV -->
+    <!-- outer DIV that contains the background image -->
 
     <div class="outer-div">
 
@@ -69,11 +72,11 @@
 
                                 <select class="input-feilds" name="category" id="selection">
                                     <option value="" disabled selected hidden>Choose a category</option>
-                                    <option value="Personal">Personal</option>
-                                    <option value="Work">Work</option>
-                                    <option value="School">School</option>
-                                    <option value="Cleaning">Cleaning</option>
-                                    <option value="Other">Other</option>
+                                    <option  class="black-text" value="Personal">Personal</option>
+                                    <option class="black-text" value="Work">Work</option>
+                                    <option class="black-text" value="School">School</option>
+                                    <option class="black-text" value="Cleaning">Cleaning</option>
+                                    <option class="black-text" value="Other">Other</option>
                                 </select>
 
                             </div>
@@ -89,8 +92,8 @@
 
                             <!-- actual due date -->
                             <div class="desc-form">
-                                <!-- input due date -->
 
+                                <!-- input due date -->
                                 <input type="date" id="datepicker" name="due_date" class="input-feilds" min="2019-06-09">
 
 
@@ -123,11 +126,14 @@
 
         </div>
 
-        <div class="todo-list-container">
+        <!-- TODO LIST CONTAINER CONTAINS THE LIST ITEM AND THE DELETE BUTTON DIV -->
+        <div class="todo-list-container" id="style-1">
+
 
             <div class="delete-tasks-button-form">
 
-                <form action="/delete-tasks" method="POST">
+                <!-- Delete Form Starts Here -->
+                <form action="/delete-tasks/" method="POST">
 
                     <!-- DELETE BUTTON CONATINER -->
                     <div class="delete-button-container">

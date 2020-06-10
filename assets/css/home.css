@@ -1,3 +1,10 @@
+body {
+    background-color: black;
+}
+
+
+/* outer-div contains the background image and is used to get the app at the centre of the webpage*/
+
 .outer-div {
     background-color: rgb(128, 128, 128);
     height: 98vh;
@@ -6,6 +13,9 @@
     background-image: url(../images/100.jpg);
     flex-direction: column;
 }
+
+
+/* todo-conatiner conatins the input part of the div and the add task button*/
 
 .todo-container {
     background-image: linear-gradient(to bottom right, rgb(10, 34, 36), rgb(30, 98, 104));
@@ -17,10 +27,8 @@
     border-left: 10px;
     border-right: 10px;
     border-bottom: 0px;
-    border-color: rgb(14, 15, 15);
+    border-color: rgb(12, 28, 28);
     border-style: solid;
-    /* border:rgb(33,97,103) solid; */
-    /* background-image: url("../images/3.png"); */
 }
 
 
@@ -28,10 +36,8 @@
 
 .heading {
     border-bottom: 1px rgb(39, 103, 107) solid;
-    /* background-image: linear-gradient(to bottom right, rgb(10, 34, 36), rgb(30, 98, 104)); */
     text-align: center;
     height: 19%;
-    /* background-color: rgb(38, 103, 107); */
 }
 
 .heading h1 {
@@ -45,7 +51,6 @@
 
 .description-conatiner {
     border-bottom: 1px rgb(39, 103, 107) solid;
-    /* background-image: linear-gradient(to bottom right, rgb(10, 34, 36), rgb(30, 98, 104)); */
     height: 20%;
     margin-top: 10px;
 }
@@ -62,14 +67,6 @@
 }
 
 
-/* css for textarea */
-
-
-/* textarea {
-    max-width: 90%;
-} */
-
-
 /* Removing blue border on Click or Focus of Input and Buttons */
 
 input:focus,
@@ -81,18 +78,14 @@ button:focus {
 }
 
 
-/* select:active,
-input::selection,
-textarea:active {
-    background: transparent;
-} */
-
-
 /* css for the details part */
+
+
+/* details-container contains two containers inside it the category container which is used to select the category 
+and the other one is the due date container which contains the date picker*/
 
 .details-container {
     border-bottom: 1px rgb(39, 103, 107) solid;
-    /* background-image: linear-gradient(to bottom right, rgb(10, 34, 36), rgb(30, 98, 104)); */
     height: 20%;
     margin-top: 10px;
     display: flex;
@@ -115,12 +108,16 @@ textarea:active {
     ;
 }
 
+.black-text {
+    color: black;
+}
+
 .due-date-container {
     width: 50%;
 }
 
 
-/* css for buttons part */
+/* css for buttons  */
 
 .add-button-container {
     height: 39%;
@@ -134,7 +131,7 @@ textarea:active {
 }
 
 #add-task {
-    width: 100%;
+    width: 147px;
     height: 100%;
     border: none;
     background-image: linear-gradient(to bottom right, rgb(52, 21, 95), rgb(4, 59, 174));
@@ -146,7 +143,8 @@ textarea:active {
 .delete-button-container {
     height: 39%;
     display: flex;
-    z-index: 999999999;
+    /* z-index: 999999999; */
+    margin-bottom: -115px;
 }
 
 .delete-button-div {
@@ -154,7 +152,7 @@ textarea:active {
     height: 50%;
     width: 25%;
     transform: translate(80px, px);
-    z-index: 999999999;
+    /* z-index: 999999999; */
 }
 
 #delete-task {
@@ -163,16 +161,25 @@ textarea:active {
     border: none;
     background-image: linear-gradient(to bottom right, rgb(155, 4, 4), red);
     background-color: rgb(238, 53, 30);
+    position: absolute;
     color: white;
-    z-index: 999999999;
+    z-index: 999;
+    transform: translate(90px, -92px);
+    width: 147px;
     /* transform: translate(90px, -118px); */
 }
+
+
+/* css for icon used in add task button */
 
 .fi-xwsuxl-plus-solid {
     font-size: 25px;
     margin: auto;
     margin-left: 0px;
 }
+
+
+/* css for icon used in delete tasks container */
 
 .fi-xnsuxl-trash-bin {
     font-size: 17px;
@@ -181,9 +188,11 @@ textarea:active {
     z-index: 999999999;
 }
 
+
+/* css for TODO lisst Container which consists of the delete button and the tasks that are added */
+
 .todo-list-container {
     background-image: linear-gradient(to top right, rgb(10, 34, 36), rgb(30, 98, 104));
-    /* background-color: rgb(255, 255, 255); */
     height: 42%;
     width: 40%;
     margin: auto;
@@ -192,16 +201,10 @@ textarea:active {
     border-left: 10px;
     border-right: 10px;
     border-bottom: 10px;
-    border-color: rgb(14, 15, 15);
+    border-color: rgb(12, 28, 28);
     border-style: solid;
     overflow-y: scroll;
 }
-
-
-/* .delete-form {
-    height: auto;
-    width: auto;
-} */
 
 
 /* css for common parts */
@@ -213,10 +216,6 @@ textarea:active {
     border: none;
     width: 90%;
     color: rgb(210, 231, 202);
-}
-
-.input-feilds option {
-    /* color: rgb(239, 232, 226); */
 }
 
 
@@ -234,15 +233,31 @@ textarea:active {
     position: relative;
 }
 
+
+/* list for the tasks that get added */
+
 .unordered-list {
     list-style-type: none;
 }
+
+
+/* list-div contains a single task */
 
 .list-div {
     border: 1px solid rgb(39, 103, 107);
     margin-left: -30px;
     margin-right: 10px;
     margin-bottom: 10px;
+    display: flex;
+    transition: all 0.5s ease-in-out;
+}
+
+::-webkit-inner-spin-button {
+    color: white;
+}
+
+.list-div:hover {
+    transform: scale(1.03);
 }
 
 .single-task {
@@ -260,6 +275,7 @@ textarea:active {
 
 .task-detail-container {
     margin-left: 20px;
+    width: 338px;
 }
 
 
@@ -285,13 +301,13 @@ textarea:active {
     padding: 10px;
 }
 
-
-/* details in task end */
-
 .task-category-container {
     color: rgb(239, 232, 226);
     margin-left: 100px;
 }
+
+
+/* css for changing the default inputs styles */
 
 ::-webkit-input-placeholder {
     color: rgb(210, 231, 202);
@@ -316,3 +332,83 @@ textarea:active {
     ;
     font-size: 13px;
 }
+
+
+/* CSS FOR SCROLLBAR */
+
+.force-overflow {
+    min-height: 450px;
+}
+
+#wrapper {
+    text-align: center;
+    width: 500px;
+    margin: auto;
+}
+
+
+/*
+ *  STYLE 1
+ */
+
+#style-1::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+#style-1::-webkit-scrollbar {
+    width: 12px;
+}
+
+#style-1::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: #113b3e87;
+}
+
+
+/* DATEPICKER NATIVE CSS */
+
+
+/* input[type="date"]:after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f073";
+    color: rgb(210, 231, 202);
+    padding: 0 5px;
+} */
+
+
+/* make the native arrow invisible and stretch it over the whole field 
+ so you can click anywhere
+ in the input field to trigger the native datepicker*/
+
+
+/* 
+input[type="date"]::-webkit-calendar-picker-indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    height: auto;
+    color: transparent;
+    background: transparent;
+} */
+
+
+/* adjust increase/decrease button */
+
+
+/* input[type="date"]::-webkit-inner-spin-button {
+    z-index: 99999999999999;
+} */
+
+
+/* adjust clear button */
+
+
+/* input[type="date"]::-webkit-clear-button {
+    z-index: 999999999999999999;
+} */
