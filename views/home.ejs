@@ -21,7 +21,7 @@
 
         <!-- TODO CONTAINER -->
 
-        <div class="todo-container" >
+        <div class="todo-container">
 
             <!-- NAME OF APP -->
             <div class="heading">
@@ -127,7 +127,7 @@
 
 
         <!-- TODO LIST CONTAINER CONTAINS THE LIST ITEM AND THE DELETE BUTTON DIV -->
-        <div class="todo-list-container" id="style-1" >
+        <div class="todo-list-container" id="style-1">
 
 
             <div class="delete-tasks-button-form" id="style-1">
@@ -136,7 +136,7 @@
                 <form action="/delete-tasks" method="POST">
 
                     <!-- DELETE BUTTON CONATINER -->
-                    <div class="delete-button-container" >
+                    <div class="delete-button-container">
 
 
                         <!-- delete tasks button -->
@@ -150,75 +150,87 @@
 
                     </div>
 
-                    <div class="create-overflow" id="style-1" >
-                    <!-- CREATING THE TASK LIST -->
-                    <div class="tasks-container">
+                    <div class="create-overflow" id="style-1">
+                        <!-- CREATING THE TASK LIST -->
+                        <div class="tasks-container">
 
-                        <UL class="unordered-list">
-                            <% for(let i of task_list){%>
-                                <div class="list-div">
-                                    <li class="single-task">
-                                        <div class="left">
-                                            <div class="check-box">
-                                                <input type="checkbox" id="task-check" value="<%= i._id %>" name="check<%= i._id %>">
-                                            </div>
-                                            <div class="task-detail-container">
-                                                <div class="task-description">
-                                                    <h5>
-                                                        <%=i.task_title %>
-                                                    </h5>
+                            <UL class="unordered-list">
+                                <!-- for loop for variable no. of elements in task list -->
+                                <% for(let i of task_list){%>
+                                    <!-- list-div contains a single task -->
+                                    <div class="list-div">
+                                        <!-- single-task contains two divs left and right to appropriately position the elements -->
+                                        <li class="single-task">
+                                            <!-- left div contains the checkbox div, and task detail div-->
+                                            <div class="left">
+                                                <!-- check box div -->
+                                                <div class="check-box">
+                                                    <!-- Check Box -->
+                                                    <input type="checkbox" id="task-check" value="<%= i._id %>" name="check<%= i._id %>">
                                                 </div>
-                                                <div class="task-due-date-container">
-                                                    <h5>
-                                                        <%= i.due_date %>
-                                                    </h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="right">
-                                            <div class="task-category-container">
-                                                <% if (i.category=="Personal") { %>
-                                                    <div class="xyz bg-seagreen">
+                                                <!-- Task-detail-container contains task description and the due date -->
+                                                <div class="task-detail-container">
+                                                    <!-- Task Dscription -->
+                                                    <div class="task-description">
                                                         <h5>
-                                                            <%= i.category %>
+                                                            <%=i.task_title %>
                                                         </h5>
                                                     </div>
-                                                    <% } else if (i.category=="Work") { %>
-                                                        <div class="xyz bg-orange ">
+                                                    <!-- Due Date -->
+                                                    <div class="task-due-date-container">
+                                                        <h5>
+                                                            <%= i.due_date %>
+                                                        </h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- right div contains the category div which specifies the different categories of the tasks -->
+                                            <div class="right">
+                                                <!-- Task Category div -->
+                                                <div class="task-category-container">
+                                                    <!-- conditions for adding different colors to the different categories of task -->
+                                                    <% if (i.category=="Personal") { %>
+                                                        <div class="xyz bg-seagreen">
                                                             <h5>
                                                                 <%= i.category %>
                                                             </h5>
                                                         </div>
-                                                        <% } else if (i.category=="School") { %>
-                                                            <div class="xyz bg-green ">
+                                                        <% } else if (i.category=="Work") { %>
+                                                            <div class="xyz bg-orange ">
                                                                 <h5>
                                                                     <%= i.category %>
                                                                 </h5>
                                                             </div>
-                                                            <% } else if (i.category=="Other") { %>
-                                                                <div class="xyz bg-violet ">
+                                                            <% } else if (i.category=="School") { %>
+                                                                <div class="xyz bg-green ">
                                                                     <h5>
                                                                         <%= i.category %>
                                                                     </h5>
                                                                 </div>
-
-                                                                <% } else if (i.category=="Cleaning") { %>
-                                                                    <div class="xyz bg-blue ">
+                                                                <% } else if (i.category=="Other") { %>
+                                                                    <div class="xyz bg-violet ">
                                                                         <h5>
                                                                             <%= i.category %>
                                                                         </h5>
                                                                     </div>
-                                                                    <% } %>
+
+                                                                    <% } else if (i.category=="Cleaning") { %>
+                                                                        <div class="xyz bg-blue ">
+                                                                            <h5>
+                                                                                <%= i.category %>
+                                                                            </h5>
+                                                                        </div>
+                                                                        <% } %>
+                                                </div>
                                             </div>
-                                        </div>
 
-                                    </li>
-                                </div>
+                                        </li>
+                                    </div>
 
-                                <%}%>
-                        </UL>
+                                    <%}%>
+                            </UL>
 
-                    </div>
+                        </div>
                     </div>
 
                 </form>
@@ -235,7 +247,7 @@
 
 
 
-
+    <!-- Please Do Check -->
     <!-- js script added at bottom of body -->
     <script type="text/javascript" src="/js/home.js"></script>
 </body>
